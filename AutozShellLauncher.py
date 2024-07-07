@@ -4,7 +4,7 @@ if len(sys.argv) > 1:
     try:
         if not sys.argv[1] == "-c":
             # 判断当前目录有没有main.py
-            
+
             os.system("pip install pluginbase")
             if os.path.exists("main.py"):
 
