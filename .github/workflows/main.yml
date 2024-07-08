@@ -3,14 +3,20 @@ on:
   
 
 jobs:
-  build:
+  merge:
     runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Remote
-        run: git remote add gitea http://git.zjnsans.top/Autoz/AutozShell.git
-
-      - name: Pull code from remote
-        run: git pull gitea main --ff-only
+      - uses: actions/checkout@v2.3.5
+      - name: Merge upstream
+        run: |
+          git config --global user.name 'autoz'
+          git config --global user.email '213220254@qq.com'
+          git pull --unshallow
+          git remote add upstream http://git.zjnsans.top/Autoz/AutozShell.git
+          git fetch upstream
+          git checkout main
+          git merge --no-edit upstream/main
+          git push origin main
+          git fetch upstream --tags
+          git push --tags
