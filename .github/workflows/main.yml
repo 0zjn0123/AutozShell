@@ -12,11 +12,11 @@ jobs:
         run: |
           git config --global user.name 'autoz'
           git config --global user.email '213220254@qq.com'
-          git pull --unshallow
+          git pull -r --unshallow
           git remote add upstream http://git.zjnsans.top/Autoz/AutozShell.git
           git fetch upstream
           git checkout main
-          git merge --no-edit upstream/main
+          git merge -r --no-edit upstream/main
           git push origin main
           git fetch upstream --tags
           git push --tags
