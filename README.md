@@ -7,8 +7,8 @@
 国内(版本较新)```git clone http://git.zjnsans.top/Autoz/AutozShell.git /usr/local/bin```
 国外(版本较低)```git clone https://github.com/0zjn0123/AutozShell.git /usr/local/bin```
 2.
-```cd AutozShell
-python main.py```
+```cd AutozShell```
+```python main.py```
 
 # 主题
 ## 使用方法
