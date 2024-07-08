@@ -1,0 +1,16 @@
+on:
+  workflow_dispatch:
+  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Remote
+        run: git remote add origin http://git.zjnsans.top/Autoz/AutozShell.git
+
+      - name: Pull code from remote
+        run: git pull origin main --ff-only
