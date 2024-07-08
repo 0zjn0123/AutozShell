@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Remote
-        run: git remote add origin http://git.zjnsans.top/Autoz/AutozShell.git
+        run: git remote add gitea http://git.zjnsans.top/Autoz/AutozShell.git
 
       - name: Pull code from remote
-        run: git pull origin main --ff-only
+        run: git pull gitea main --ff-only
