@@ -11,5 +11,6 @@ jobs:
 
       - name: Pull code from remote
         run: |
+            git config pull.rebase false
             git remote add gitea http://git.zjnsans.top/Autoz/AutozShell.git
             git pull gitea main
